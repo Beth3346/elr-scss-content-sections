@@ -1,0 +1,14 @@
+@import "elr-scss-functions/src/main";
+
+// TODO: feature section
+
+@mixin elr-content-section($config: ()) {
+  $config: extend(
+    (
+      color: #333,
+    ),
+    $config
+  );
+
+  $color: map-get($config, color);
+}
