@@ -20,8 +20,6 @@
 
   .content-image-section,
   .content-section {
-    // background-color: $tertiary-color;
-    // background: linear-gradient($primary-color-light, $tertiary-color);
     width: 100%;
     background-color: $background-light;
     margin-left: auto;
@@ -36,8 +34,8 @@
     }
 
     @media (max-width: $tablet-max-width) {
-      padding-top: 32px;
-      padding-bottom: 32px;
+      padding-top: $base-fontsize * 2;
+      padding-bottom: $base-fontsize * 2;
     }
 
     .content-holder {
@@ -93,79 +91,6 @@
       display: flex;
       flex-wrap: wrap;
     }
-
-    .content-column {
-      padding: ($base-fontsize * 1.5) $base-fontsize;
-      text-align: left;
-      flex: 1;
-      min-width: 33.333%;
-
-      &:first-of-type {
-        padding-left: 0;
-      }
-
-      &:last-of-type {
-        padding-right: 0;
-      }
-
-      @media (max-width: $tablet-width) {
-        min-width: 50%;
-      }
-
-      @media (max-width: $tablet-max-width) {
-        min-width: 100%;
-        padding: 0;
-      }
-
-      h2,
-      h3,
-      h4,
-      p,
-      li {
-        margin: ($base-fontsize * 0.5) 0;
-        padding: 0;
-      }
-
-      h2 {
-        font-size: $h2-fontsize;
-        margin: ($h2-fontsize * 0.5) 0;
-      }
-
-      h3 {
-        font-size: $h3-fontsize;
-        margin: ($h3-fontsize * 0.5) 0;
-      }
-
-      p {
-        font-size: $base-fontsize * 1.125;
-        line-height: 1.5;
-
-        @media (max-width: $tablet-max-width) {
-          font-size: 14px;
-        }
-      }
-
-      ul,
-      ol {
-        margin: ($base-fontsize * 1.5) 0 ($base-fontsize * 1.5) $base-fontsize;
-
-        li {
-          list-style-position: inside;
-          font-size: $base-fontsize * 1.125;
-        }
-      }
-
-      blockquote {
-        margin: ($base-fontsize) 0;
-        padding: ($base-fontsize * 0.5) 0 ($base-fontsize * 0.5)
-          ($base-fontsize * 2);
-        border-left: 6px solid $primary-color-light;
-
-        p {
-          font-style: italic;
-        }
-      }
-    }
   }
 
   .content-image-section {
@@ -196,7 +121,7 @@
       padding: 0;
 
       &.padded {
-        padding: 32px;
+        padding: $base-fontsize * 2;
       }
 
       > div {
@@ -280,6 +205,79 @@
 
       @media (max-width: $tablet-width) {
         font-size: $h2-fontsize;
+      }
+    }
+  }
+
+  .content-column {
+    padding: ($base-fontsize * 1.5) $base-fontsize;
+    text-align: left;
+    flex: 1;
+    min-width: 33.333%;
+
+    &:first-of-type {
+      padding-left: 0;
+    }
+
+    &:last-of-type {
+      padding-right: 0;
+    }
+
+    @media (max-width: $tablet-width) {
+      min-width: 50%;
+    }
+
+    @media (max-width: $tablet-max-width) {
+      min-width: 100%;
+      padding: 0;
+    }
+
+    h2,
+    h3,
+    h4,
+    p,
+    li {
+      margin: ($base-fontsize * 0.5) 0;
+      padding: 0;
+    }
+
+    h2 {
+      font-size: $h2-fontsize;
+      margin: ($h2-fontsize * 0.5) 0;
+    }
+
+    h3 {
+      font-size: $h3-fontsize;
+      margin: ($h3-fontsize * 0.5) 0;
+    }
+
+    p {
+      font-size: $base-fontsize * 1.125;
+      line-height: 1.5;
+
+      @media (max-width: $tablet-max-width) {
+        font-size: 14px;
+      }
+    }
+
+    ul,
+    ol {
+      margin: ($base-fontsize * 1.5) 0 ($base-fontsize * 1.5) $base-fontsize;
+
+      li {
+        list-style-position: inside;
+        font-size: $base-fontsize * 1.125;
+      }
+    }
+
+    blockquote {
+      margin: ($base-fontsize) 0;
+      padding: ($base-fontsize * 0.5) 0 ($base-fontsize * 0.5)
+        ($base-fontsize * 2);
+      border-left: 6px solid $primary-color-light;
+
+      p {
+        font-style: italic;
       }
     }
   }
