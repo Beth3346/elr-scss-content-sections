@@ -1,5 +1,6 @@
 @import "./src/main";
 @import "elr-scss-reset/src/main";
+@import "elr-scss-config/src/main";
 
 @include elr-reset;
 
@@ -7,42 +8,36 @@
   font-family: Roboto;
 }
 
-hr {
-  display: block;
-  height: 1px;
-  border: 0;
-  border-top: 1px solid #ccc;
-  margin: 1em 0;
-  padding: 0;
-  width: 100%;
-}
-
 .wrapper {
-  max-width: 1000px;
-  margin: auto;
-  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto 48px;
+  padding: ($base-fontsize * 1.5);
 }
 
 .main-heading {
-  font-size: 36px;
+  font-size: $base-fontsize * 2;
   font-weight: 900;
-  border-bottom: 1px solid #ccc;
-  padding-bottom: 5px;
-  margin-bottom: 10px;
+  border-bottom: $border;
+  padding-bottom: $base-fontsize * 0.5;
+  margin-bottom: $base-fontsize;
   width: 100%;
 }
 
 .subheading {
-  font-size: 16px;
-  color: #666;
-  padding-bottom: 5px;
-  margin-bottom: 10px;
+  font-size: $base-fontsize;
+  color: $gray;
+  padding-bottom: $base-fontsize * 0.5;
+  margin-bottom: $base-fontsize;
   width: 100%;
 }
 
 .demo-content {
   position: relative;
-  padding: 20px 0;
+  padding: ($base-fontsize * 1.5) 0;
   display: flex;
   flex-wrap: wrap;
+}
+
+.content-section-wrapper {
+  @include elr-content-section;
 }

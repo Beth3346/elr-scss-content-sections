@@ -1,14 +1,286 @@
 @import "elr-scss-functions/src/main";
+@import "elr-scss-helpers/src/main";
 
 // TODO: feature section
 
 @mixin elr-content-section($config: ()) {
   $config: extend(
     (
-      color: #333,
+      color: $text-color,
+      background-color: $background-light,
     ),
     $config
   );
 
   $color: map-get($config, color);
+  @include elr-button-classes;
+
+  max-width: $content-width;
+  width: 100%;
+
+  .content-image-section,
+  .content-section {
+    // background-color: $tertiary-color;
+    // background: linear-gradient($primary-color-light, $tertiary-color);
+    width: 100%;
+    background-color: $background-light;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .content-section {
+    padding: ($base-fontsize * 3) ($base-fontsize * 2);
+
+    &.rounded {
+      border-radius: $border-radius;
+    }
+
+    @media (max-width: $tablet-max-width) {
+      padding-top: 32px;
+      padding-bottom: 32px;
+    }
+
+    .content-holder {
+      margin: auto;
+      padding: 0;
+
+      @media (max-width: $tablet-max-width) {
+        padding-bottom: 0;
+      }
+    }
+
+    .content-holder,
+    .button-holder {
+      max-width: 960px;
+    }
+
+    .content-holder-wide,
+    .button-holder-wide {
+      max-width: $desktop-width;
+    }
+
+    &.content-left {
+      text-align: left;
+
+      .button-holder {
+        justify-content: flex-start;
+      }
+    }
+
+    &.content-center {
+      text-align: center;
+
+      .column-holder {
+        max-width: 768px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .button-holder {
+        justify-content: center;
+      }
+    }
+
+    &.content-right {
+      text-align: right;
+
+      .button-holder {
+        justify-content: flex-end;
+      }
+    }
+
+    .column-holder {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .content-column {
+      padding: ($base-fontsize * 1.5) $base-fontsize;
+      text-align: left;
+      flex: 1;
+      min-width: 33.333%;
+
+      &:first-of-type {
+        padding-left: 0;
+      }
+
+      &:last-of-type {
+        padding-right: 0;
+      }
+
+      @media (max-width: $tablet-width) {
+        min-width: 50%;
+      }
+
+      @media (max-width: $tablet-max-width) {
+        min-width: 100%;
+        padding: 0;
+      }
+
+      h2,
+      h3,
+      h4,
+      p,
+      li {
+        margin: ($base-fontsize * 0.5) 0;
+        padding: 0;
+      }
+
+      h2 {
+        font-size: $h2-fontsize;
+        margin: ($h2-fontsize * 0.5) 0;
+      }
+
+      h3 {
+        font-size: $h3-fontsize;
+        margin: ($h3-fontsize * 0.5) 0;
+      }
+
+      p {
+        font-size: $base-fontsize * 1.125;
+        line-height: 1.5;
+
+        @media (max-width: $tablet-max-width) {
+          font-size: 14px;
+        }
+      }
+
+      ul,
+      ol {
+        margin: ($base-fontsize * 1.5) 0 ($base-fontsize * 1.5) $base-fontsize;
+
+        li {
+          list-style-position: inside;
+          font-size: $base-fontsize * 1.125;
+        }
+      }
+
+      blockquote {
+        margin: ($base-fontsize) 0;
+        padding: ($base-fontsize * 0.5) 0 ($base-fontsize * 0.5)
+          ($base-fontsize * 2);
+        border-left: 6px solid $primary-color-light;
+
+        p {
+          font-style: italic;
+        }
+      }
+    }
+  }
+
+  .content-image-section {
+    &.rounded {
+      border-radius: $border-radius;
+      overflow: hidden;
+    }
+
+    &.flipped > div {
+      flex-direction: row-reverse;
+
+      @media (max-width: $tablet-max-width) {
+        flex-direction: column-reverse;
+      }
+    }
+
+    > div {
+      display: flex;
+
+      @media (max-width: $tablet-max-width) {
+        flex-direction: column;
+      }
+    }
+
+    figure {
+      flex-basis: 50%;
+      margin: 0;
+      padding: 0;
+
+      &.padded {
+        padding: 32px;
+      }
+
+      > div {
+        height: 100%;
+      }
+    }
+
+    .content-holder {
+      flex-basis: 800px;
+      max-width: 50%;
+      padding: 64px;
+
+      @media (max-width: $tablet-max-width) {
+        padding: 24px;
+      }
+    }
+
+    .button-holder {
+      margin-top: 16px;
+    }
+  }
+
+  .button-holder {
+    display: flex;
+    margin: 0 auto;
+
+    @media (max-width: $tablet-max-width) {
+      flex-direction: column;
+      margin-bottom: 0;
+      margin-top: 16px;
+    }
+
+    a,
+    button {
+      display: block;
+    }
+
+    @media (min-width: $tablet-width) {
+      button + button,
+      a + a,
+      a + button,
+      button + a {
+        margin-left: 16px;
+      }
+    }
+
+    @media (max-width: $tablet-max-width) {
+      button + button,
+      a + a,
+      a + button,
+      button + a {
+        margin-top: 16px;
+      }
+    }
+  }
+
+  .heading-group {
+    h2,
+    h3 {
+      padding: 0;
+      margin: 0;
+    }
+
+    h3 {
+      text-transform: uppercase;
+      font-size: $base-fontsize;
+      letter-spacing: 1px;
+      font-weight: 700;
+      color: $secondary-color;
+
+      @media (max-width: $tablet-width) {
+        font-size: 14px;
+      }
+    }
+
+    h2 {
+      font-size: $h1-fontsize;
+      color: $primary-color;
+      text-shadow: $text-shadow;
+      font-weight: 900;
+
+      @media (max-width: $tablet-width) {
+        font-size: $h2-fontsize;
+      }
+    }
+  }
 }
