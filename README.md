@@ -1,5 +1,7 @@
-# elr-scss-content-sections
+# Content Sections
 
+[![npm version](http://img.shields.io/npm/v/elr-scss-content-sections.svg)](https://www.npmjs.org/package/elr-scss-content-sections)
+[![Build Status](https://github.com/elr-scss-content-sections/workflows/CI/badge.svg)](https://github.com/elr-scss-content-sections/actions?workflow=CI)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![npm](https://img.shields.io/npm/dm/elr-scss-content-sections.svg?style=flat)](https://npmjs.com/package/elr-scss-content-sections)
 
