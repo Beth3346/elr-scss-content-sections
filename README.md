@@ -4,8 +4,11 @@
 [![CI](https://github.com/Beth3346/elr-scss-content-sections/actions/workflows/node.js.yml/badge.svg)](https://github.com/Beth3346/elr-scss-content-sections/actions/workflows/node.js.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![npm](https://img.shields.io/npm/dm/elr-scss-content-sections.svg?style=flat)](https://npmjs.com/package/elr-scss-content-sections)
+[![last commit](https://img.shields.io/github/last-commit/Beth3346/elr-scss-content-sections.svg)](https://github.com/Beth3346/elr-scss-content-sections)
 
 a scss mixin for content-sections
+
+<!-- [View Demo](https://elr-content-sections.netlify.app/) -->
 
 ## Installation
 
